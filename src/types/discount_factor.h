@@ -1,8 +1,11 @@
 #ifndef DISCOUNT_FACTOR_H_
 #define DISCOUNT_FACTOR_H_
-struct DiscuntFactor{
-    int OaDate;
-    double Value;
+class DiscuntFactor{
+    public:
+        unsigned SerialDate;
+        double Value;
+        DiscountFactor(unsigned serialDate, double value):SerialDate(serialDate), Value(value){};
+
 };
 
 #endif //DISCOUNT_FACTOR_H_ 

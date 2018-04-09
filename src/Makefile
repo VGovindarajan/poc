@@ -6,11 +6,14 @@ CXXFLAGS=-c -g -Wall -Wextra -Wpedantic -std=c++11
 
 all: hello
 
-hello: hello.o 
-	$(CXX) -o hello hello.o 
+hello: hello.o curve_type.o 
+	$(CXX) -o hello hello.o curve_type.o 
 
 hello.o: 
-	$(CXX) $(CXXFLAGS) types/hello.cpp types/curve_types.h types/discount_factor.h types/discount_factors.h 
+	$(CXX) $(CXXFLAGS) types/hello.cpp 
+
+curve_type.o: 
+	$(CXX) $(CXXFLAGS) types/curve_type.cpp 
 
 clean:
-	rm hello.o hello
+	rm hello.o curve_type.o hello

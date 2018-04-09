@@ -3,6 +3,7 @@
 
 #include <vector>
 #include "discount_factor.h"
+#include "curve_type.h"
 
 class DiscountFactors{
     public:
@@ -14,7 +15,5 @@ class DiscountFactors{
         vector<DiscountFactor> _discountFactorVector;
         CurveType _curveType;
 }
-
-
 
 #endif //DISCOUNT_FACTORS_H_
