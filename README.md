@@ -1,7 +1,7 @@
 
 **Curve builder http end point poc**
 
-* Main idea. *
+* Main idea. 
 1. Define a set of classes that will return a set of discount factors for a given locale.
 2. Use Json or other formats to transport the data.
 3. Stand-up an http end-point to with GET/POST support.
@@ -9,7 +9,7 @@
 5. Ability to interface with alerting protocols. 
 
 
-* Dependent Libraries *
+* Dependent Libraries 
 1. https://github.com/nlohmann/json
 
 
