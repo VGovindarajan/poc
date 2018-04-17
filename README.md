@@ -1,5 +1,5 @@
 
-*Sol curve builder http end point poc*
+*Curve builder http end point poc*
 
 
 
