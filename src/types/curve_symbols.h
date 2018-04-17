@@ -2,32 +2,25 @@
 #define CURVE_SYMBOLS_H_
 
 #include <vector>
+#include <iostream>
 #include "curve_type.h"
 #include "curve_symbol.h"
+using namespace std;
 
-class CurveSymbols{
-    public:
-        CurveSymbols(CurveType curveType, vector<CurveSymbol> curveSymbolVector):
-        _curveType(curveType), _curveSymbolVector(curveSymbolVector)    
-        {
-        };
-        
-        CurveSymbols(CurveSymbols &cs):
-        _curveType(cs.getCurveType()), _curveSymbolVector(cs.getCurveSymbolVectors())    
-        {
-        };
+namespace Poc {
+    class CurveSymbols {
+        public:
 
-        std::ostream& operator<<(std::ostream& out, CurveSymbols const &cs){
-            out << cs.getCurveType() << ", " << cs.getCurveSymbolsVectors().count() << std::endl;
-            return out;
-        }
+            CurveSymbols(CurveType curveType, std::vector<CurveSymbol> curveSymbolVector);
+            CurveSymbols(CurveSymbols const &cs);
 
+            CurveType getCurveType()const {return _curveType;};
+            std::vector<CurveSymbol> getCurveSymbolVector()const {return _curveSymbolVector;};
 
-        CurveType getCurveType(){return _curveType;};
-        vector<CurveSymbol> getCurveSymbolVectors(){return _curveSymbolVector;};
-
-    private:
-        CurveType _curveType;
-        vector<CurveSymbol> _curveSymbolVector;
-};
+        private:
+            CurveType _curveType;
+            std::vector<CurveSymbol> _curveSymbolVector;
+    };
+    std::ostream& operator<<(std::ostream& out, const CurveSymbols &cs);
+}
 #endif //CURVE_SYMBOLS_H_
